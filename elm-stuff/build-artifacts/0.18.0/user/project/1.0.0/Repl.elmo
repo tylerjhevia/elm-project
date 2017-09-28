@@ -1,3 +1,4 @@
+
 var _user$project$Repl$under80 = function (entity) {
 	return (_elm_lang$core$Native_Utils.cmp(entity.age, 80) < 0) ? {ctor: '_Tuple2', _0: true, _1: 'YUNG'} : {ctor: '_Tuple2', _0: false, _1: 'SO OLD'};
 };
@@ -54,3 +55,4 @@ var _user$project$Repl$double = function (n) {
 };
 var _user$project$Repl$bill = {name: 'Gates', age: 57};
 var _user$project$Repl$d_e_l_t_r_o_n_3_0_3_0 = _user$project$Repl$bill.name;
+
