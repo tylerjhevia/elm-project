@@ -1,2 +1,58 @@
+
+var _user$project$Repl$under80 = function (entity) {
+	return (_elm_lang$core$Native_Utils.cmp(entity.age, 80) < 0) ? {ctor: '_Tuple2', _0: true, _1: 'YUNG'} : {ctor: '_Tuple2', _0: false, _1: 'SO OLD'};
+};
+var _user$project$Repl$under70 = function (_p0) {
+	var _p1 = _p0;
+	return _elm_lang$core$Native_Utils.cmp(_p1.age, 70) < 0;
+};
 var _user$project$Repl$t_s_o_l = {ctor: '_Tuple0'};
-var _user$project$Repl$d_e_l_t_r_o_n_3_0_3_0 = _elm_lang$core$String$reverse('stressed');
+var _user$project$Repl$point = {x: 3, y: 4};
+var _user$project$Repl$over9000 = function (powerLevel) {
+	return (_elm_lang$core$Native_Utils.cmp(powerLevel, 9000) > 0) ? 'It\'s over 9000!!!' : 'soft ass power level';
+};
+var _user$project$Repl$numbers = {
+	ctor: '::',
+	_0: 1,
+	_1: {
+		ctor: '::',
+		_0: 4,
+		_1: {
+			ctor: '::',
+			_0: 3,
+			_1: {
+				ctor: '::',
+				_0: 2,
+				_1: {ctor: '[]'}
+			}
+		}
+	}
+};
+var _user$project$Repl$names = {
+	ctor: '::',
+	_0: 'Tyler',
+	_1: {
+		ctor: '::',
+		_0: 'Brett',
+		_1: {
+			ctor: '::',
+			_0: 'Jesse',
+			_1: {ctor: '[]'}
+		}
+	}
+};
+var _user$project$Repl$isNegative = function (n) {
+	return _elm_lang$core$Native_Utils.cmp(n, 0) < 0;
+};
+var _user$project$Repl$goodName = function (name) {
+	return (_elm_lang$core$Native_Utils.cmp(
+		_elm_lang$core$String$length(name),
+		20) < 1) ? {ctor: '_Tuple2', _0: true, _1: 'name accepted!'} : {ctor: '_Tuple2', _0: false, _1: 'name was too long; limit it to 20 characters my friend'};
+};
+var _user$project$Repl$gandalf = {name: 'The Grey', age: 1000};
+var _user$project$Repl$double = function (n) {
+	return n * 2;
+};
+var _user$project$Repl$bill = {name: 'Gates', age: 57};
+var _user$project$Repl$d_e_l_t_r_o_n_3_0_3_0 = _user$project$Repl$bill.name;
+
