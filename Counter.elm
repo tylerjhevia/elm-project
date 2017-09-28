@@ -17,7 +17,7 @@ model =
 
 -- UPDATE
 
-type Msg = Increment | Decrement  -- union type
+type Msg = Increment | Decrement | IncrementTwo | DecrementTwo  -- union type
 
 update : Msg -> Model -> Model
 update msg model =
@@ -28,13 +28,27 @@ update msg model =
     Decrement ->
       model - 1
 
+    IncrementTwo -> 
+      model + 2
+
+    DecrementTwo -> 
+      model - 2
+
 
 -- VIEW
 
 view : Model -> Html Msg
 view model =
+
+  div [] 
+   [
   div []
     [ button [ onClick Decrement ] [ text "-" ]
     , div [] [ text (toString model) ]
     , button [ onClick Increment ] [ text "+" ]
+    ]
+  , div []
+    [button [ onClick DecrementTwo ] [text "--" ]
+    , div[] [ text (toString model) ]
+    , button [ onClick IncrementTwo ] [ text "++"]]
     ]
