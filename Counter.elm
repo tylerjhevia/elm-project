@@ -17,7 +17,7 @@ model =
 
 -- UPDATE
 
-type Msg = Increment | Decrement | IncrementTwo | DecrementTwo  -- union type
+type Msg = Increment | Decrement | IncrementTwo | DecrementTwo | Reset  -- union type
 
 update : Msg -> Model -> Model
 update msg model =
@@ -33,6 +33,9 @@ update msg model =
 
     DecrementTwo -> 
       model - 2
+
+    Reset ->
+      model - model
 
 
 -- VIEW
@@ -51,4 +54,6 @@ view model =
     [button [ onClick DecrementTwo ] [text "--" ]
     , div[] [ text (toString model) ]
     , button [ onClick IncrementTwo ] [ text "++"]]
-    ]
+  , div[]
+    [button [onClick Reset] [text "RESET"]]
+   ]
