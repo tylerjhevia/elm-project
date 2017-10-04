@@ -8,11 +8,14 @@ var _user$project$Main$update = F2(
 				return model - 1;
 			case 'IncrementTwo':
 				return model + 2;
-			default:
+			case 'DecrementTwo':
 				return model - 2;
+			default:
+				return model - model;
 		}
 	});
 var _user$project$Main$model = 0;
+var _user$project$Main$Reset = {ctor: 'Reset'};
 var _user$project$Main$DecrementTwo = {ctor: 'DecrementTwo'};
 var _user$project$Main$IncrementTwo = {ctor: 'IncrementTwo'};
 var _user$project$Main$Decrement = {ctor: 'Decrement'};
@@ -117,7 +120,29 @@ var _user$project$Main$view = function (model) {
 							}
 						}
 					}),
-				_1: {ctor: '[]'}
+				_1: {
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{ctor: '[]'},
+						{
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$button,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Reset),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html$text('RESET'),
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}),
+					_1: {ctor: '[]'}
+				}
 			}
 		});
 };
