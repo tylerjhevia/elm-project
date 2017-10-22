@@ -51,10 +51,14 @@ viewValidation : Model -> Html msg
 viewValidation model = 
     let
         (color, message) = 
-            if model.password == model.passwordAgain then
+            if String.length model.password < 9 then
+                ("red", "Password must be at least nine characters.")
+            else if model.password == model.passwordAgain then
                 ("green", "OK")
             else 
                 ("red", "Passwords do not match!")
+    
     in
         div [ style [("color", color)] ] [text message]
         
+   

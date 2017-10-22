@@ -1,5 +1,7 @@
 var _user$project$Main$viewValidation = function (model) {
-	var _p0 = _elm_lang$core$Native_Utils.eq(model.password, model.passwordAgain) ? {ctor: '_Tuple2', _0: 'green', _1: 'OK'} : {ctor: '_Tuple2', _0: 'red', _1: 'Passwords do not match!'};
+	var _p0 = (_elm_lang$core$Native_Utils.cmp(
+		_elm_lang$core$String$length(model.password),
+		9) < 0) ? {ctor: '_Tuple2', _0: 'red', _1: 'Password must be at least nine characters.'} : (_elm_lang$core$Native_Utils.eq(model.password, model.passwordAgain) ? {ctor: '_Tuple2', _0: 'green', _1: 'OK'} : {ctor: '_Tuple2', _0: 'red', _1: 'Passwords do not match!'});
 	var color = _p0._0;
 	var message = _p0._1;
 	return A2(
