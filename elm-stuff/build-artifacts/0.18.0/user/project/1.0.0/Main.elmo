@@ -1,7 +1,7 @@
 var _user$project$Main$viewValidation = function (model) {
 	var _p0 = (_elm_lang$core$Native_Utils.cmp(
 		_elm_lang$core$String$length(model.password),
-		9) < 0) ? {ctor: '_Tuple2', _0: 'red', _1: 'Password must be at least nine characters.'} : (_elm_lang$core$Native_Utils.eq(model.password, model.passwordAgain) ? {ctor: '_Tuple2', _0: 'green', _1: 'OK'} : {ctor: '_Tuple2', _0: 'red', _1: 'Passwords do not match!'});
+		9) < 0) ? {ctor: '_Tuple2', _0: 'red', _1: 'Password must be at least nine characters.'} : ((!_elm_lang$core$Native_Utils.eq(model.password, model.passwordAgain)) ? {ctor: '_Tuple2', _0: 'red', _1: 'Passwords do not match'} : (_elm_lang$core$Native_Utils.eq(model.age, '') ? {ctor: '_Tuple2', _0: 'red', _1: 'Please enter your age as a number.'} : {ctor: '_Tuple2', _0: 'green', _1: 'Ok.'}));
 	var color = _p0._0;
 	var message = _p0._1;
 	return A2(
@@ -34,17 +34,32 @@ var _user$project$Main$update = F2(
 				return _elm_lang$core$Native_Utils.update(
 					model,
 					{password: _p1._0});
-			default:
+			case 'PasswordAgain':
 				return _elm_lang$core$Native_Utils.update(
 					model,
 					{passwordAgain: _p1._0});
+			default:
+				var _p3 = _p1._0;
+				var _p2 = _elm_lang$core$String$toInt(_p3);
+				if (_p2.ctor === 'Ok') {
+					return _elm_lang$core$Native_Utils.update(
+						model,
+						{age: _p3});
+				} else {
+					return _elm_lang$core$Native_Utils.update(
+						model,
+						{age: ''});
+				}
 		}
 	});
-var _user$project$Main$Model = F3(
-	function (a, b, c) {
-		return {name: a, password: b, passwordAgain: c};
+var _user$project$Main$Model = F4(
+	function (a, b, c, d) {
+		return {name: a, password: b, passwordAgain: c, age: d};
 	});
-var _user$project$Main$model = A3(_user$project$Main$Model, '', '', '');
+var _user$project$Main$model = A4(_user$project$Main$Model, '', '', '', '');
+var _user$project$Main$Age = function (a) {
+	return {ctor: 'Age', _0: a};
+};
 var _user$project$Main$PasswordAgain = function (a) {
 	return {ctor: 'PasswordAgain', _0: a};
 };
@@ -114,8 +129,27 @@ var _user$project$Main$view = function (model) {
 						{ctor: '[]'}),
 					_1: {
 						ctor: '::',
-						_0: _user$project$Main$viewValidation(model),
-						_1: {ctor: '[]'}
+						_0: A2(
+							_elm_lang$html$Html$input,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$type_('text'),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$placeholder('Age'),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$html$Html_Events$onInput(_user$project$Main$Age),
+										_1: {ctor: '[]'}
+									}
+								}
+							},
+							{ctor: '[]'}),
+						_1: {
+							ctor: '::',
+							_0: _user$project$Main$viewValidation(model),
+							_1: {ctor: '[]'}
+						}
 					}
 				}
 			}
